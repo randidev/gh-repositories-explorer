@@ -14,7 +14,9 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${inter.className}`}>{children}</main>
+      <main className={`${inter.className}`} data-testid="main-content">
+        {children}
+      </main>
     </>
   );
 };

@@ -6,7 +6,8 @@ const EmptyState: FC<EmptyStateProps> = ({ message }) => {
     <Text
       color={"base.secondary"}
       fontSize="md"
-      dangerouslySetInnerHTML={{ __html: message }}></Text>
+      dangerouslySetInnerHTML={{ __html: message }}
+      data-testid="empty-state"></Text>
   );
 };
 

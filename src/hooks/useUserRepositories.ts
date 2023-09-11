@@ -9,14 +9,18 @@ const useUserRepositories = () => {
   > | null>(null);
   const [loading, setLoading] = useState(false);
   const [fetched, setFetched] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchRepositories = async (username: string) => {
+    setError(false);
+
     if (username === "") {
       toast({
         title: "Username is required.",
         status: "warning",
         isClosable: true,
       });
+      setError(true);
 
       return;
     }
@@ -50,6 +54,7 @@ const useUserRepositories = () => {
     fetchRepositories,
     fetched,
     reset,
+    error,
   };
 };
 

@@ -12,14 +12,21 @@ import {
   Input,
   VStack,
   Text,
+  VisuallyHidden,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
 export default function Home() {
   const [username, setUsername] = useState("");
 
-  const { userRepositories, loading, fetchRepositories, fetched, reset } =
-    useUserRepositories();
+  const {
+    userRepositories,
+    loading,
+    fetchRepositories,
+    fetched,
+    reset,
+    error,
+  } = useUserRepositories();
 
   return (
     <>
@@ -41,14 +48,19 @@ export default function Home() {
               onChange={(e) => setUsername(e.target.value)}
               value={username}
               placeholder="Enter username"
+              data-testid="username-input"
             />
             <Button
               isLoading={loading}
               onClick={() => fetchRepositories(username)}
               colorScheme="blue"
-              w="full">
+              w="full"
+              data-testid="search-button">
               Search
             </Button>
+            <VisuallyHidden data-testid="validation">
+              {error ? "Username is required." : ""}
+            </VisuallyHidden>
           </VStack>
           <Box maxH={`calc(100vh - 100px)`} overflowY={"auto"} w={"full"}>
             {userRepositories && userRepositories.data.length > 0 ? (
@@ -56,7 +68,7 @@ export default function Home() {
                 <Text color={"base.secondary"} fontSize="md" mb={5}>
                   Showing users for <b>{username}</b>
                 </Text>
-                <Accordion allowToggle>
+                <Accordion data-testid="accordion" allowToggle>
                   {userRepositories.data.map((user, index) => (
                     <AccordionItem key={index}>
                       <h2>

@@ -15,11 +15,11 @@ const RepositoryCard: FC<RepositoryCardProps> = ({ repo }) => {
       color={textColor}
       alignItems={"flex-start"}>
       <Stack>
-        <Text>{repo.name}</Text>
-        <Text>{repo.description}</Text>
+        <Text data-testid="title">{repo.name}</Text>
+        <Text data-testid="description">{repo.description}</Text>
       </Stack>
       <Flex alignItems={"center"} gap={2}>
-        {repo.stargazers_count} <AiFillStar />
+        <Text data-testid="stars">{repo.stargazers_count}</Text> <AiFillStar />
       </Flex>
     </Flex>
   );
