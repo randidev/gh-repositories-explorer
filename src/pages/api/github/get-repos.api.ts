@@ -35,7 +35,7 @@ export default async function handler(
               name: String(repo.name),
               description: repo.description ?? "-",
               stargazers_count: Number(repo.stargazers_count),
-              url: String(repo.url),
+              url: String(repo.html_url),
             };
           }),
         });
