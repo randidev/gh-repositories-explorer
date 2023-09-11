@@ -1,0 +1,3 @@
+interface RepositoryCardProps {
+  repo: Repository;
+}
