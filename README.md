@@ -77,8 +77,8 @@ Check the `components` folder if you have neccessary components needed to finish
 The screen defines a collection of components. You can define some components here if you think it is only usable within the screen but preferrably components should be resuable. Any logic, API request, or retrieving from redux store should be defined here.
 
 1. Create a folder under `src/pages`. Make sure the name is concise enough to understand what the component is about.
-2. Create a root page file called `index.tsx`. This file will define the page itself.
-3. Endpoints inside `src/pages/api` should also end with `.ts` extension.
+2. Create a root page file called `index.page.tsx`. This file will define the page itself.
+3. Endpoints inside `src/pages/api` should also end with `.api.ts` extension.
 
 ## Naming Convention
 

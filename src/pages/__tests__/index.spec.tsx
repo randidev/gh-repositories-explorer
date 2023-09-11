@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import Home from "..";
+import Home from "../index.page";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 
