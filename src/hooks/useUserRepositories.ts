@@ -14,7 +14,7 @@ const useUserRepositories = () => {
   const fetchRepositories = async (username: string) => {
     setError(false);
 
-    if (username === "") {
+    if (username.trim() === "") {
       toast({
         title: "Username is required.",
         status: "warning",

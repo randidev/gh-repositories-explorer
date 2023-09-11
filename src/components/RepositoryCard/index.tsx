@@ -13,7 +13,9 @@ const RepositoryCard: FC<RepositoryCardProps> = ({ repo }) => {
       justifyContent={"space-between"}
       backgroundColor={bgColor}
       color={textColor}
-      alignItems={"flex-start"}>
+      alignItems={"flex-start"}
+      cursor={"pointer"}
+      onClick={() => window.open(repo.url, "_blank", "noreferrer")}>
       <Stack>
         <Text data-testid="title">{repo.name}</Text>
         <Text data-testid="description">{repo.description}</Text>
